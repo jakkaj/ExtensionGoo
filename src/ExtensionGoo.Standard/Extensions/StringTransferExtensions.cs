@@ -10,29 +10,6 @@ namespace ExtensionGoo.Standard.Extensions
 {
     public static class StringTransferExtensions
     {
-        public static async Task<TEntityResult> PostAndParse<TEntityResult, TEntitySend>(this string url,
-            TEntitySend postObject, string method = "POST", IDictionary<string, string> headers = null)
-        where TEntityResult : class
-        where TEntitySend : class
-
-        {
-            var objSer = postObject.Serialise();
-
-            var config = HttpConfigHelper.GetJsonConfig(url, objSer);
-
-            var result = await HttpHelper.Transfer(config);
-
-            if (!result.IsSuccessCode)
-            {
-                return null;
-            }
-
-            var des = _deserialise<TEntityResult>(result.Result);
-
-            return des;
-        }
-
-
         public static async Task<TEntityType> GetAndParse<TEntityType>(this string url, IDictionary<string, string> headers = null)
        where TEntityType : class
         {
@@ -77,6 +54,47 @@ namespace ExtensionGoo.Standard.Extensions
             var result = await HttpHelper.Transfer(config);
 
             return result.Result;
+        }
+
+        public static async Task<TEntityResult> PostAndParse<TEntityResult, TEntitySend>(this string url,
+            TEntitySend postObject, string method = "POST", IDictionary<string, string> headers = null)
+        where TEntityResult : class
+        where TEntitySend : class
+
+        {
+            var objSer = postObject.Serialise();
+
+            var config = HttpConfigHelper.GetJsonConfig(url, objSer);
+
+            var result = await HttpHelper.Transfer(config);
+
+            if (!result.IsSuccessCode)
+            {
+                return null;
+            }
+
+            var des = _deserialise<TEntityResult>(result.Result);
+
+            return des;
+        }
+
+
+        public static async Task<TEntityResult> PostAndParse<TEntityResult>(this string url,
+            byte[] data, string method = "POST", IDictionary<string, string> headers = null)
+        where TEntityResult : class
+        {
+            var config = HttpConfigHelper.GetJsonConfig(url, null, data, "POST", headers, "application/octet-stream");
+
+            var result = await HttpHelper.Transfer(config);
+
+            if (!result.IsSuccessCode)
+            {
+                return null;
+            }
+
+            var des = _deserialise<TEntityResult>(result.Result);
+
+            return des;
         }
 
         private static T _deserialise<T>(string entity) where T : class

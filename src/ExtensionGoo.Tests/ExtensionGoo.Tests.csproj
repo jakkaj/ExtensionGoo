@@ -53,9 +53,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Entity\CogServicesEntity.cs" />
     <Compile Include="Entity\JwtSampleEntity.cs" />
     <Compile Include="Entity\TestEntity.cs" />
     <Compile Include="Entity\TokenResult.cs" />
+    <Compile Include="Entity\VisionResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\FullRoundTripTests.cs" />
     <Compile Include="Tests\SerialiseTests.cs" />

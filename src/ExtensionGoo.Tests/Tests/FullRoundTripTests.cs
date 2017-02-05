@@ -26,11 +26,11 @@ namespace ExtensionGoo.Tests.Tests
         public async Task TestPost()
         {
             var url =
-                "[someurl]";
+                "https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Adult,Categories,Color,Description,Faces,ImageType,Tags&subscription-key=5c1fdbb9037a43788bd46b9261866f13 ";
 
             var img = File.ReadAllBytes("Data\\stan.jpg");
 
-            var postResult = await url.Post(img);
+            var postResult = await url.PostAndParse<VisionResponse>(img);
 
             Assert.IsNotNull(postResult);
         }
