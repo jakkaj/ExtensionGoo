@@ -3,7 +3,7 @@
   <metadata>
     <id>ExtensionGoo</id>
 	<title>Extension Goo</title>
-    <version>0.0.4</version>
+    <version>0.0.7</version>
     <authors>Jordan</authors>
     <owners>Jordan</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
@@ -13,6 +13,7 @@
     <description>Some little helpers to make writing Azure Functions and other shortform apps in C# a little easier</description>
     <releaseNotes>	
 	
+    0.0.5 - Added capability to post raw data.
     0.0.4 - Added capability to send through headers. 
 
     Contact Jordan @jakkaj. 
