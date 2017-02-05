@@ -43,6 +43,7 @@
     <Compile Include="Entity\HttpTransferResult.cs" />
     <Compile Include="Extensions\StringSerialiseExtensions.cs" />
     <Compile Include="Extensions\StringTransferExtensions.cs" />
+    <Compile Include="Extensions\TaskExtensions.cs" />
     <Compile Include="Helpers\HttpConfigHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

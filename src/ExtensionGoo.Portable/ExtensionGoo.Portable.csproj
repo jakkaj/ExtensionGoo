@@ -46,6 +46,9 @@
     <Compile Include="..\ExtensionGoo.Standard\Extensions\StringTransferExtensions.cs">
       <Link>Extensions\StringTransferExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\ExtensionGoo.Standard\Extensions\TaskExtensions.cs">
+      <Link>Extensions\TaskExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\ExtensionGoo.Standard\Helpers\HttpConfigHelper.cs">
       <Link>Helpers\HttpConfigHelper.cs</Link>
     </Compile>
